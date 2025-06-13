@@ -84,7 +84,7 @@ public:
             cout << "Queus is empty\n";
             return;
         }
-        
+
 
         cout << "\nElements in the queus are...\n";
 
@@ -98,6 +98,7 @@ public:
             }
             cout << endl;
         }
+        
         else
         {
             // jika FRON_position > REAR_position, iterasi dari FRONT hingga akhir

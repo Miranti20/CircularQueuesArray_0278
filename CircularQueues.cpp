@@ -54,6 +54,7 @@ public:
                 FRONT = -1;
                 REAR = -1;
             }
+            
 
             else {
                 // jika element yang di hapus berada diposisi terakhir array, kembali

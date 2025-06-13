@@ -107,7 +107,7 @@ public:
                 FRONT_position++;
             }
             FRONT_position = 0;
-            
+
 
             // Iterasi dari awal array hingga REAR
             while (FRONT_position <= REAR_position) {
@@ -118,6 +118,7 @@ public:
     }
 }
 };
+
 int main () {
     Queues q;
     char ch;

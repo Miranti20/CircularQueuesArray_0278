@@ -98,7 +98,7 @@ public:
             }
             cout << endl;
         }
-        
+
         else
         {
             // jika FRON_position > REAR_position, iterasi dari FRONT hingga akhir
@@ -107,6 +107,7 @@ public:
                 FRONT_position++;
             }
             FRONT_position = 0;
+            
 
             // Iterasi dari awal array hingga REAR
             while (FRONT_position <= REAR_position) {

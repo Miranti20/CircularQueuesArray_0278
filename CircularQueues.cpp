@@ -17,6 +17,7 @@ public:
         cin >>num;
         cout << endl;
 
+
         //Cek apakah antrian penuh
         if (( FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
             cout << "\nQueues overflow\n";
@@ -35,4 +36,5 @@ public:
             else
                 REAR = REAR + 1;
         }
-        queue_array[REAR] = num;
+        queues_array[REAR] = num;
+        

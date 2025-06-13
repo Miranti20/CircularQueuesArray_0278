@@ -38,7 +38,7 @@ public:
             else
                 REAR = REAR + 1;
         }
-        
+
         queues_array[REAR] = num;
 
         void remove() {
@@ -47,6 +47,7 @@ public:
                 cout << "Queue underflow\n";
                 return;
             }
+            
             cout << "\nThe element deleted from the queus is: " << queus_array[REAR]
 
             // Cek jika antrian hanya memiliki satu alemen

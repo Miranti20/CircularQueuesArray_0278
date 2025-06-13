@@ -16,8 +16,7 @@ public:
         cout << "Enter a number: ";
         cin >>num;
         cout << endl;
-
-
+    
         //Cek apakah antrian penuh
         if (( FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
             cout << "\nQueues overflow\n";
@@ -47,7 +46,7 @@ public:
                 cout << "Queue underflow\n";
                 return;
             }
-            
+
             cout << "\nThe element deleted from the queus is: " << queus_array[REAR]
 
             // Cek jika antrian hanya memiliki satu alemen
@@ -55,6 +54,7 @@ public:
                 FRONT = -1;
                 REAR = -1;
             }
+
             else {
                 // jika element yang di hapus berada diposisi terakhir array, kembali
                 if (FRONT == max - 1)
@@ -92,7 +92,4 @@ public:
                 }
         }
 
-            
-        
-            
-        
+

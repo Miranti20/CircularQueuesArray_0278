@@ -24,6 +24,7 @@ public:
             return;
         }
 
+
         // cek apakah antrian kosong 
         if (FRONT == -1) {
             FRONT = 0;
@@ -37,4 +38,58 @@ public:
                 REAR = REAR + 1;
         }
         queues_array[REAR] = num;
+
+        void remove() {
+            // Cek apakah antrian kosong
+            if (FRONT == -1) {
+                cout << "Queue underflow\n";
+                return;
+            }
+            cout << "\nThe element deleted from the queus is: " << queus_array[REAR]
+
+            // Cek jika antrian hanya memiliki satu alemen
+            if (FRONT == REAR) {
+                FRONT = -1;
+                REAR = -1;
+            }
+            else {
+                // jika element yang di hapus berada diposisi terakhir array, kembali
+                if (FRONT == max - 1)
+                FRONT = 0;
+            else
+                FRONT = FRONT + 1;
+            }
+
+        }
+
+        void display() {
+            int FRONT_position = FRONT;
+            int REAR_position = REAR;
+
+            // Cek apakah antrian kosong 
+            if (FRONT == -1) {
+                cout << "Queus is empty\n";
+                retrun;
+            }
+
+            cout << "\nElements in the queus are...\n";
+
+            // jika FRONT_position <= REAR_position iterasi dari FRONT hingga REAR
+            if (FRONT_position <= REAR_position) {
+                while (FRONT_position <= max -1) {
+                    cout << queus_array[FRONT_position] << " ";
+                    FRONT_position++;
+                }
+                cout << endl;
+            }
+            else {
+                // jika FRON_position > REAR_position, iterasi dari FRONT hingga akhir
+                while (FRONT_position <= max - 1) {
+                    cout << queus_array[]
+                }
+        }
+
+            
+        
+            
         

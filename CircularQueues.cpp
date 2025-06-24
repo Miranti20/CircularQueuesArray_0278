@@ -1,18 +1,68 @@
+/**
+ * @mainpage Documentation Circular Queues
+ * 
+ * @section Introduction
+ * Project ini merupakan project struktur data
+ * Menggunakan struktur data queues dengan pendekatan circular arrays.
+ * 
+ * @section Operations
+ * Project ini memiliki beberapa operasi antara lain:
+ * 1. Insert
+ * 2. Delete
+ * 3. Display
+ * 
+ * @section Cara Penggunaan
+ * Berikut beberapa menu yang bisa digunakan:
+ * 1. en queue
+ * 2. de queue
+ * 3. display
+ * 4. exit
+ * 
+ * @author Profil
+ * - nama : Miranti
+ * - nim : 20240140278
+ * - kelas : F
+ 
+ * @brief
+ * @version 0.1
+ * @data 2025-06-23
+ * 
+ * @copyright Miranti.ft24@mail.umy.ac.id (f) 2025
+ * 
+ */
+
 #include <iostream>
 using namespace std;
-
-class Queues
-{
-    int FRONT, REAR, max = 5;
-    int queues_array[5];
+/**
+ * @class Queues
+ * @brief class ini untuk operasi lengkap queues
+ * 
+ * 
+ */
+class Queues {
+private:
+    int FRONT; ///< variable private front untuk menyimpan posisi depan antrian
+    int REAR; ///< variable private rear untuk menyimpan posisi belakang antrian
+    int max = 5; ///< variable private max untuk memyimpan ukuran maximum antrian
+    int queue_array[5]; ///< variable private queue_array untuk menyimpan elemen antrian
 
 public:
+    /**
+     * @brief Construct a new Queues object 
+     * set default queues null
+     * with front = -1 and rear = -1
+     */
     Queues()
     {
         FRONT = -1;
         REAR = -1;
     }
 
+
+    /**
+     * @brief method untuk memasukkan data dalam antrian
+     * data dimasukkan dalam variable queue_array
+     */
     void insert()
     {
         int num;
@@ -43,9 +93,13 @@ public:
                 REAR = REAR + 1;
         }
 
-        queues_array[REAR] = num;
+        queue_array[REAR] = num;
     }
 
+    /**
+     * @brief method untuk menghapus data dalam antrian
+     * data dihapuskan dari dalam variable queue_array
+     */
     void remove()
     {
         // Cek apakah antrian kosong
@@ -55,7 +109,7 @@ public:
             return;
         }
 
-        cout << "\nThe element deleted from the queus is: " << queues_array[REAR];
+        cout << "\nThe element deleted from the queus is: " << queue_array[REAR];
 
             // Cek jika antrian hanya memiliki satu alemen
             if (FRONT == REAR)
@@ -73,10 +127,14 @@ public:
         }
     }
 
+    /**
+     * @brief method untuk menampilkan data dalam antrian
+     * data ditampilkan yang berada variable queue_array
+     */
     void display()
     {
-        int FRONT_position = FRONT;
-        int REAR_position = REAR;
+        int FRONT_position = FRONT; ///< variable front_position untuk menandakan posisi element pertama pada variable front
+        int REAR_position = REAR; ///< variable rear_position untuk menandakan posisi element terakhir pada variable rear 
 
         // Cek apakah antrian kosong
         if (FRONT == -1)
@@ -93,7 +151,7 @@ public:
         {
             while (FRONT_position <= max - 1)
             {
-                cout << queues_array[FRONT_position] << " ";
+                cout << queue_array[FRONT_position] << " ";
                 FRONT_position++;
             }
             cout << endl;
@@ -103,7 +161,7 @@ public:
         {
             // jika FRON_position > REAR_position, iterasi dari FRONT hingga akhir
             while (FRONT_position <= max - 1) {
-                cout << queues_array[FRONT_position] << " ";
+                cout << queue_array[FRONT_position] << " ";
                 FRONT_position++;
             }
             FRONT_position = 0;
@@ -111,7 +169,7 @@ public:
 
             // Iterasi dari awal array hingga REAR
             while (FRONT_position <= REAR_position) {
-                cout << queues_array[FRONT_position] << " ";
+                cout << queue_array[FRONT_position] << " ";
                 FRONT_position++;
         }
         cout << endl;
@@ -120,8 +178,8 @@ public:
 };
 
 int main () {
-    Queues q;
-    char ch;
+    Queues q; ///< object untuk menggunakan member yang ada pada class Queues
+    char ch; ///< variable ch untuk menyimpan pilihan pada menu yang diberikan
 
     while (true){
         
